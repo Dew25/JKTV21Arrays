@@ -29,6 +29,8 @@ public class JKTV21Arrays {
         int sum = 0;
         int min = n;
         int max = 0;
+        int sumDown = 0;
+        int sumUp = 0;
         for(int i = 0;i<nums.length;i++){
             System.out.printf("%2d,",nums[i]);
             sum += nums[i];
@@ -40,6 +42,7 @@ public class JKTV21Arrays {
         System.out.println("min = "+min);
         System.out.println("max = "+max);
         System.out.println("--- Двухмерные массивы ---");
+        sum = 0;
         int[][] nums2 = new int[n][n];
         for(int i = 0; i < nums2.length;i++){
             for(int j = 0; j < nums2[i].length; j++){
@@ -52,6 +55,12 @@ public class JKTV21Arrays {
             }
             System.out.println();
         }
+        System.out.println("sum = "+sum);
+        System.out.println("min = "+min);
+        System.out.println("max = "+max);
+        System.out.println("sumDowh = "+sumDown);
+        System.out.println("sumUp = "+sumUp);
+        
     }
     
 }
