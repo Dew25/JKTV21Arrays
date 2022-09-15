@@ -43,18 +43,36 @@ public class JKTV21Arrays {
         System.out.println("max = "+max);
         System.out.println("--- Двухмерные массивы ---");
         sum = 0;
+        max = 0;
+        min = n;
         int[][] nums2 = new int[n][n];
         for(int i = 0; i < nums2.length;i++){
+            
             for(int j = 0; j < nums2[i].length; j++){
                 nums2[i][j] = random.nextInt(n);
+                
             }
         }
+        int[] colsSum = new int[n]; 
         for(int i = 0; i < nums2.length;i++){
+            int lineSum = 0;
             for(int j = 0; j < nums2[i].length; j++){
-                System.out.printf("%3d",nums2[i][j]);
+                System.out.printf("%4d",nums2[i][j]);
+                sum += nums2[i][j];
+                lineSum += nums2[i][j];
+                if(min > nums2[i][j])min = nums2[i][j];
+                if(max < nums2[i][j])max = nums2[i][j];
+                colsSum[j] += nums2[i][j];
+                if(i == j)sumDown += nums2[i][j];
+                if(i == n-j)sumUp += nums2[i][j];
             }
-            System.out.println();
+            System.out.println(" | lineSum = "+lineSum);
         }
+        System.out.println("---------------------------------------------------------");
+        for(int i = 0; i < colsSum.length; i++){
+            System.out.printf("%4d",colsSum[i]);
+        }
+        System.out.println();
         System.out.println("sum = "+sum);
         System.out.println("min = "+min);
         System.out.println("max = "+max);
